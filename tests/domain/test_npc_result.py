@@ -17,3 +17,5 @@ def test_create_npc_invalid_name():
     assert result.failure().message == "NPC requires a name"
 
 
+
+
