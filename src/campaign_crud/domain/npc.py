@@ -3,11 +3,14 @@ from returns.result import Result, Failure, Success
 from .errors import NPCError
 
 from .stat_block import StatBlock
+from .npc_id import NPCID
 
 class NPC:
-    def __init__(self, name: str, stat_block: StatBlock):
+    def __init__(self, name: str, stat_block: StatBlock, npc_id: NPCID):
         self.name = name
         self.stat_block = stat_block
+        self.id = npc_id
+
 
     @classmethod
     def create(cls, name: str, stat_block: StatBlock) -> Result["NPC", str]:
@@ -15,7 +18,8 @@ class NPC:
             return Failure(NPCError("NPC requires a name"))
         if not stat_block:
             return Failure(NPCError("NPC requires a stat block"))
-        return Success(NPC(name, stat_block))
+        npc_id = NPCID.new()
+        return Success(NPC(name, stat_block, npc_id))
 
     @property
     def armor_class(self):

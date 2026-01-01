@@ -17,3 +17,7 @@ class NPCError(DomainError):
     """NPC validation error"""
     pass
 
+@dataclass()
+class RepositoryError(DomainError):
+    """Wraps persistance layer errors"""
+    pass
