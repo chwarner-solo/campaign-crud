@@ -1,0 +1,23 @@
+### Variables
+@host = http://localhost:8000
+@npc_name_1 = Attercop
+@npc_name_2 = Shelob
+@npc_name_3 = Grok
+
+### Create NPC 1
+POST {{host}}/npcs/?name={{npc_name_1}}
+
+### Create NPC 2
+POST {{host}}/npcs/?name={{npc_name_2}}
+
+### Create NPC 3
+POST {{host}}/npcs/?name={{npc_name_3}}
+
+### Get All NPCs
+GET {{host}}/npcs/
+
+### Get NPC by ID (replace with actual ID from create response)
+GET {{host}}/npcs/550e8400-e29b-41d4-a716-446655440000
+
+### Health Check
+GET {{host}}/health

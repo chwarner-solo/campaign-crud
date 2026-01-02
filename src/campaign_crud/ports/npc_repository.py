@@ -14,3 +14,7 @@ class NPCRepository(ABC):
     def get(self, npc_id: NPCID) -> Result[NPC, RepositoryError]:
         """Get an NPC by id"""
         pass
+
+    def get(self) -> Result[list[NPC], RepositoryError]:
+        """Get all NPCs"""
+        pass
