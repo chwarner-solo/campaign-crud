@@ -13,4 +13,8 @@ class InMemoryNPCRepository(NPCRepository):
         return Success(npc)
 
     def get(self, npc_id: NPCID) -> Result[NPC, DomainError]:
-        return Success(self.npcs[npc_id])
+        return Success(self.npcs.get(npc_id))
+
+    def get_all(self) -> Result[list[NPC], DomainError]:
+        return Success(list(self.npcs.values()))
+

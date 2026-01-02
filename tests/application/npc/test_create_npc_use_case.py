@@ -1,6 +1,4 @@
-from markdown_it.rules_block import StateBlock
-
-from campaign_crud.applicastion.create_npc import CreateNPCUseCase
+from campaign_crud.application.npc.create_npc import CreateNPCUseCase
 from campaign_crud.domain.stat_block import StatBlock
 from tests.doubles.in_memory_npc_repository import InMemoryNPCRepository
 
